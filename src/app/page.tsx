@@ -1,69 +1,88 @@
 import Image from "next/image";
+import About from "@/components/sections/About";
+import Skills from "@/components/sections/Skills";
+import Projects from "@/components/sections/Projects";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen bg-[#080B12] text-white">
+      <section
+        id="home"
+        className="mx-auto flex min-h-screen max-w-7xl flex-col-reverse items-center justify-center gap-14 px-6 py-24 lg:flex-row lg:gap-20"
+      >
+        {/* Left Content */}
+        <div className="flex-1 text-center lg:text-left">
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.25em] text-indigo-400">
+            Welcome to my portfolio
           </p>
+
+          <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+            Hi, I&apos;m{" "}
+            <span className="bg-gradient-to-r from-indigo-400 to-sky-400 bg-clip-text text-transparent">
+              Samia Islam Ridita
+            </span>
+          </h1>
+
+          <h2 className="mt-7 text-xl font-medium text-slate-200 sm:text-2xl">
+            Aspiring Frontend Developer | React & Next.js
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-xl text-base leading-8 text-slate-400 lg:mx-0">
+            I&apos;m a Computer Science and Engineering undergraduate at
+            Green University of Bangladesh, passionate about creating modern,
+            responsive, and user-friendly web experiences. I enjoy learning
+            frontend technologies and building practical projects that
+            strengthen my development skills.
+          </p>
+
+          {/* Buttons */}
+          <div className="mt-9 flex flex-wrap justify-center gap-4 lg:justify-start">
+            <a
+              href="#projects"
+              className="rounded-xl bg-indigo-500 px-7 py-3.5 font-semibold text-white transition hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-400"
+            >
+              View Projects
+            </a>
+
+            <a
+              href="mailto:samiaislamridita670@gmail.com"
+              className="rounded-xl border border-slate-600 px-7 py-3.5 font-semibold text-slate-200 transition hover:border-indigo-400 hover:text-indigo-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-400"
+            >
+              Contact Me
+            </a>
+          </div>
+
+          {/* Availability */}
+          <div className="mt-10 flex items-center justify-center gap-3 lg:justify-start">
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+            <p className="text-sm text-slate-400">
+              Open to internships and junior developer opportunities
+            </p>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* Right Profile Image */}
+        <div className="flex flex-1 justify-center">
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-indigo-500/25 to-sky-500/20 blur-2xl" />
+
+            <div className="relative overflow-hidden rounded-[2rem] border border-slate-700 bg-[#151B2B] p-3 shadow-2xl">
+              <Image
+                src="/img.png"
+                alt="Samia Islam Ridita"
+                width={430}
+                height={520}
+                priority
+                className="h-[360px] w-[300px] rounded-[1.5rem] object-cover sm:h-[450px] sm:w-[370px]"
+              />
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+                 </section>
+
+      <About />
+      <Skills />
+      <Projects />
+    </main>
   );
 }
